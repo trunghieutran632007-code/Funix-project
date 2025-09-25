@@ -11,7 +11,7 @@ public class Thuat_toan {
         try (FileWriter writer = new FileWriter("text.txt")) {
             for (int i = 0; i < n; i++){
                 System.out.print("Enter element " + (i + 1) + ": ");
-                int element = sc.nextInt();
+                float element = sc.nextFloat();
 
                 writer.write(writer + "");
             }
