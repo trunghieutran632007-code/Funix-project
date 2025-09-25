@@ -19,8 +19,12 @@ public class Main {
             switch (choice) {
                 case 1:
                     Thuat_toan.writeFile();
+                    break;
                 case 0:
                     System.out.println("Thanks!!!");
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + choice);
             }
 
 
