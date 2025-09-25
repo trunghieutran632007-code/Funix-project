@@ -20,6 +20,7 @@ public class Main {
 
             switch (choice) {
                 case 1:
+                    Thuat_toan.writeFile();
             }
 
 
