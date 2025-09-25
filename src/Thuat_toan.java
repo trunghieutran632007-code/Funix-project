@@ -13,14 +13,14 @@ public class Thuat_toan {
                 System.out.print("Enter element " + (i + 1) + ": ");
                 float element = sc.nextFloat();
 
-                writer.write(writer + "");
+                writer.write(element + " ");
             }
 
         } catch (IOException e){
             System.out.println("Error");
             e.printStackTrace();
         }
-        sc.close(); //đóng objecj sc
+
 
 
     }
