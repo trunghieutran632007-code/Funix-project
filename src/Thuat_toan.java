@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Thuat_toan {
+    public static float[] a;
     public static void writeFile() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number of elements: ");
@@ -40,19 +41,20 @@ public class Thuat_toan {
             scanner.close();
 
             // Chuyển ArrayList -> mảng float[]
-            float[] numbers = new float[list.size()];
+            a = new float[list.size()];
             for (int i = 0; i < list.size(); i++) {
-                numbers[i] = list.get(i);
+                a[i] = list.get(i);
             }
 
             // In ra để kiểm tra
-            System.out.println("Dữ liệu trong mảng float:");
-            for (float num : numbers) {
+            System.out.println("Read from file:");
+            System.out.print("Array a: ");
+            for (float num : a) {
                 System.out.print(num + " ");
             }
 
         } catch (FileNotFoundException e) {
-            System.out.println("Không tìm thấy file!");
+            System.out.println("Cannot open file");
         }
     }
 }

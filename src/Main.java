@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner sc =  new Scanner(System.in);
+
         int choice ;
         do {
             System.out.println("\n=== MENU ===");
@@ -19,6 +21,10 @@ public class Main {
             switch (choice) {
                 case 1:
                     Thuat_toan.writeFile();
+                    break;
+
+                case 2:
+                    Thuat_toan.readFile();
                     break;
                 case 0:
                     System.out.println("Thanks!!!");
