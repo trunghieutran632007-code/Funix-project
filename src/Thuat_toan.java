@@ -115,4 +115,61 @@ public class Thuat_toan {
             System.out.println("Error" + e.getMessage());
         }
     }
+    public static void insertionSort() {
+        b = Arrays.copyOf(a, a.length);
+
+        for (int i = 1; i < b.length; i++){
+            float key = b[i];
+            int j = i - 1;
+
+            while (j >= 0 && b[j] > key) {
+                b[j + 1] = b[j];
+                j--;
+            }
+            b[j + 1] = key;
+            System.out.println(Arrays.toString(b));
+        }
+        //In ra file OUTPUT3.txt
+        try {
+            FileWriter writer = new FileWriter("OUTPUT3.txt");
+            writer.write(Arrays.toString(b));
+            writer.close();
+
+        } catch (IOException e) {
+            System.out.println("Error" + e.getMessage());
+        }
+
+    }
+    public static void search(){
+        Scanner sc =  new Scanner(System.in);
+        //nhap value
+        System.out.print("Enter value");
+        float value = sc.nextFloat();
+
+        //tim gia tri lon hon value
+        ArrayList<Integer> indices = new ArrayList<>();
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] > value) {
+                indices.add(i);
+            }
+        }
+        //in ra man hinh
+        if (indices.isEmpty()) {
+            System.out.println("No element in the array is greater than" + value);
+        } else {
+            System.out.println(indices);
+        }
+        //ghi ket qua ra file
+        try {
+            FileWriter writer = new FileWriter("OUTPUT4.txt");
+            if (indices.isEmpty()) {
+                writer.write("No element in the array is greater than" + value);
+            } else {
+                writer.write(String.valueOf(indices));
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("Error" + e.getMessage());
+        }
+    }
 }

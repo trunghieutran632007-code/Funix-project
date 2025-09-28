@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -32,6 +33,12 @@ public class Main {
                 case 4:
                     Thuat_toan.selectionSort();
                     break;
+                case 5:
+                    Thuat_toan.insertionSort();
+                    break;
+                case 6:
+                    Thuat_toan.search();
+                    break;
                 case 0:
                     System.out.println("Thanks!!!");
                     break;
@@ -43,4 +50,5 @@ public class Main {
         }while (choice != 0);
 
     }
+
 }
