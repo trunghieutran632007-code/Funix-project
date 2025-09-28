@@ -77,7 +77,42 @@ public class Thuat_toan {
             }
 
         }
+        try {
+            FileWriter writer = new FileWriter("OUTPUT1.txt");
+            writer.write(Arrays.toString(b));
+            writer.close();
+
+        } catch (IOException e) {
+            System.out.println("Error" + e.getMessage());
+        }
 
 
+    }
+    public  static void selectionSort() {
+        b = Arrays.copyOf(a, a.length);
+        int n = b.length;
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (b[j] < b[minIndex]) {
+                    minIndex = j;
+                }
+
+            }
+            if (minIndex != i) {
+                float temp = b[i];
+                b[i] = b[minIndex];
+                b[minIndex] = temp;
+            }
+            System.out.println(Arrays.toString(b));
+        }
+        try {
+            FileWriter writer = new FileWriter("OUTPUT2.txt");
+            writer.write(Arrays.toString(b));
+            writer.close();
+
+        } catch (IOException e) {
+            System.out.println("Error" + e.getMessage());
+        }
     }
 }

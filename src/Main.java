@@ -29,6 +29,9 @@ public class Main {
                 case 3:
                     Thuat_toan.bubbleSort();
                     break;
+                case 4:
+                    Thuat_toan.selectionSort();
+                    break;
                 case 0:
                     System.out.println("Thanks!!!");
                     break;
