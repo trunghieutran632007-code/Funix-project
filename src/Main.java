@@ -39,6 +39,10 @@ public class Main {
                 case 6:
                     Thuat_toan.search();
                     break;
+                case 7:
+                    Thuat_toan.searchBinary();
+                    break;
+
                 case 0:
                     System.out.println("Thanks!!!");
                     break;

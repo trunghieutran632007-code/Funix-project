@@ -143,7 +143,7 @@ public class Thuat_toan {
     public static void search(){
         Scanner sc =  new Scanner(System.in);
         //nhap value
-        System.out.print("Enter value");
+        System.out.print("Enter value: ");
         float value = sc.nextFloat();
 
         //tim gia tri lon hon value
@@ -171,5 +171,50 @@ public class Thuat_toan {
         } catch (IOException e) {
             System.out.println("Error" + e.getMessage());
         }
+    }
+    public static void searchBinary() {
+        //nhap gia tri value
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter value: ");
+        float value = sc.nextFloat();
+
+        //sap xep bang insertion sort
+        b = Arrays.copyOf(a, a.length);
+
+        for (int i = 1; i < b.length; i++) {
+            float key = b[i];
+            int j = i - 1;
+
+            while (j >= 0 && b[j] > key) {
+                b[j + 1] = b[j];
+                j--;
+            }
+            b[j + 1] = key;
+
+        }
+        //tim kiem Binary search
+        int left = 0;
+        int right = b.length - 1;
+        int result = -1 ;// chua tim thay/ khong tim thay
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+
+            if (b[mid] == value) {
+                result = mid; // tim thay
+            } else if (b[mid] < value) {
+                left = mid + 1; // tim ben phai
+            } else {
+                right = mid - 1; // tim ben trai
+            }
+
+        }
+        if (result == -1) {
+            System.out.println("Cannot find " + value + " in array.");
+        } else {
+            System.out.println(result);
+        }
+
+
     }
 }
