@@ -3,10 +3,13 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Thuat_toan {
     public static float[] a;
+    public static float[] b;
+
     public static void writeFile() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number of elements: ");
@@ -56,5 +59,25 @@ public class Thuat_toan {
         } catch (FileNotFoundException e) {
             System.out.println("Cannot open file");
         }
+    }
+    public static void bubbleSort() {
+        b = Arrays.copyOf(a, a.length); //copy dữ liệu từ mảng a
+        int n = b.length;
+        boolean swapped;
+        for (int i = 0; i < n - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < n - i - 1; j++) {
+                if (b[j] > b[j + 1]) {
+                    float temp = b[j];
+                    b[j] = b[j + 1];
+                    b[j + 1] = temp;
+                    swapped = true;
+                }
+                System.out.println(Arrays.toString(b));
+            }
+
+        }
+
+
     }
 }

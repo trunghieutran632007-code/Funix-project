@@ -26,6 +26,9 @@ public class Main {
                 case 2:
                     Thuat_toan.readFile();
                     break;
+                case 3:
+                    Thuat_toan.bubbleSort();
+                    break;
                 case 0:
                     System.out.println("Thanks!!!");
                     break;
