@@ -7,15 +7,15 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Thuat_toan {
-    public static float[] a;
+    public static float[] a; //khai bao 2 mang theo yeu cau de bai
     public static float[] b;
 
-    public static void writeFile() {
+    public static void writeFile() { //chuc nang 1
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number of elements: ");
         int n = sc.nextInt();
-
-        try (FileWriter writer = new FileWriter("text.txt")) {
+        //in ra file
+        try (FileWriter writer = new FileWriter("INPUT.txt")) {
             for (int i = 0; i < n; i++){
                 System.out.print("Enter element " + (i + 1) + ": ");
                 float element = sc.nextFloat();
@@ -31,9 +31,9 @@ public class Thuat_toan {
 
 
     }
-    public static void readFile(){
+    public static void readFile(){ // chuc nang 2
         try{
-            File file = new File("text.txt");
+            File file = new File("INPUT.txt");
             Scanner scanner = new Scanner(file);
 
             ArrayList<Float> list = new ArrayList<>();
@@ -43,13 +43,13 @@ public class Thuat_toan {
             }
             scanner.close();
 
-            // Chuyển ArrayList -> mảng float[]
+            // Chuyen ArrayList -> mang float[]
             a = new float[list.size()];
             for (int i = 0; i < list.size(); i++) {
                 a[i] = list.get(i);
             }
 
-            // In ra để kiểm tra
+            // In ra de kiem tra
             System.out.println("Read from file:");
             System.out.print("Array a: ");
             for (float num : a) {
@@ -60,8 +60,9 @@ public class Thuat_toan {
             System.out.println("Cannot open file");
         }
     }
-    public static void bubbleSort() {
-        b = Arrays.copyOf(a, a.length); //copy dữ liệu từ mảng a
+    public static void bubbleSort() { // chuc nang 3
+        System.out.println("Bubble sort");
+        b = Arrays.copyOf(a, a.length); //copy du lieu tu mang a
         int n = b.length;
         boolean swapped;
         for (int i = 0; i < n - 1; i++) {
@@ -77,6 +78,7 @@ public class Thuat_toan {
             }
 
         }
+        //in ra file
         try {
             FileWriter writer = new FileWriter("OUTPUT1.txt");
             writer.write(Arrays.toString(b));
@@ -88,7 +90,8 @@ public class Thuat_toan {
 
 
     }
-    public  static void selectionSort() {
+    public  static void selectionSort() { //chuc nang 4
+        System.out.println("Selection sort");
         b = Arrays.copyOf(a, a.length);
         int n = b.length;
         for (int i = 0; i < n - 1; i++) {
@@ -106,6 +109,7 @@ public class Thuat_toan {
             }
             System.out.println(Arrays.toString(b));
         }
+        //in ra file
         try {
             FileWriter writer = new FileWriter("OUTPUT2.txt");
             writer.write(Arrays.toString(b));
@@ -115,7 +119,8 @@ public class Thuat_toan {
             System.out.println("Error" + e.getMessage());
         }
     }
-    public static void insertionSort() {
+    public static void insertionSort() { //chuc nang 5
+        System.out.println("Insertion sort");
         b = Arrays.copyOf(a, a.length);
 
         for (int i = 1; i < b.length; i++){
@@ -129,7 +134,7 @@ public class Thuat_toan {
             b[j + 1] = key;
             System.out.println(Arrays.toString(b));
         }
-        //In ra file OUTPUT3.txt
+        //in ra file
         try {
             FileWriter writer = new FileWriter("OUTPUT3.txt");
             writer.write(Arrays.toString(b));
@@ -140,7 +145,8 @@ public class Thuat_toan {
         }
 
     }
-    public static void search(){
+    public static void search(){//chuc nang 6
+        System.out.println("Linear Search");
         Scanner sc =  new Scanner(System.in);
         //nhap value
         System.out.print("Enter value: ");
@@ -173,10 +179,11 @@ public class Thuat_toan {
         }
     }
 
-    public static void searchBinary() {
+    public static void searchBinary() { //chuc nang 7
+        System.out.println("Binary Search");
         //nhap gia tri value
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter value: ");
+        System.out.print("Input value: ");
         float value = sc.nextFloat();
 
         //sap xep bang insertion sort
@@ -214,7 +221,17 @@ public class Thuat_toan {
         if (result == -1) {
             System.out.println("Cannot find " + value + " in array.");
         } else {
-            System.out.println(result);
+            //in so chi vi tri ra man hinh
+            System.out.println("Indext of fist element: " + result);
+            //in so chi vi tri ra file
+            try {
+                FileWriter writer = new FileWriter("OUTPUT5.txt");
+                FileWriter writer1 = writer;
+                writer1.write(String.valueOf(result));
+                writer1.close();
+            } catch (IOException e) {
+                System.out.println("Error" + e.getMessage());
+            }
         }
 
 
