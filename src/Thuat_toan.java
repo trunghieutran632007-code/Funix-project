@@ -172,6 +172,7 @@ public class Thuat_toan {
             System.out.println("Error" + e.getMessage());
         }
     }
+
     public static void searchBinary() {
         //nhap gia tri value
         Scanner sc = new Scanner(System.in);
@@ -195,13 +196,14 @@ public class Thuat_toan {
         //tim kiem Binary search
         int left = 0;
         int right = b.length - 1;
-        int result = -1 ;// chua tim thay/ khong tim thay
+        int result = -1;// chua tim thay/ khong tim thay
 
         while (left <= right) {
             int mid = (left + right) / 2;
 
             if (b[mid] == value) {
                 result = mid; // tim thay
+                break;
             } else if (b[mid] < value) {
                 left = mid + 1; // tim ben phai
             } else {
